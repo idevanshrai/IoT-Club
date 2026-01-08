@@ -146,17 +146,14 @@ body.light #splash {
   margin-bottom: 2rem;
 }
 
-.logo-text {
-  font-size: 4rem;
-  font-weight: 600;
-  letter-spacing: -1px;
-  color: var(--text-dark);
+.logo-image {
+  width: auto;
+  height: 120px;
+  max-width: 300px;
+  object-fit: contain;
   animation: fadeInScale 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   opacity: 0;
-}
-
-body.light .logo-text {
-  color: var(--text-light);
+  filter: drop-shadow(0 0 20px rgba(93, 220, 255, 0.3));
 }
 
 @keyframes fadeInScale {
@@ -242,15 +239,23 @@ body.light header {
 }
 
 .logo {
-  font-size: 1.3rem;
-  font-weight: 600;
   cursor: pointer;
-  transition: color 0.3s ease;
-  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
-.logo:hover {
-  color: var(--accent);
+.header-logo-image {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(93, 220, 255, 0.2));
+}
+
+.logo:hover .header-logo-image {
+  filter: drop-shadow(0 0 15px rgba(93, 220, 255, 0.5));
+  transform: scale(1.05);
 }
 
 nav {
@@ -739,6 +744,10 @@ body.light .socials img {
     padding: 1rem 1.5rem;
   }
 
+  .header-logo-image {
+    height: 38px;
+  }
+
   nav {
     gap: 1rem;
   }
@@ -776,8 +785,9 @@ body.light .socials img {
     gap: 1.5rem;
   }
 
-  .logo-text {
-    font-size: 3rem;
+  .logo-image {
+    height: 90px;
+    max-width: 250px;
   }
 
   .splash-subtext {
@@ -790,8 +800,8 @@ body.light .socials img {
 }
 
 @media (max-width: 480px) {
-  .logo {
-    font-size: 1.1rem;
+  .header-logo-image {
+    height: 32px;
   }
 
   nav {
@@ -813,8 +823,9 @@ body.light .socials img {
     font-size: 2rem;
   }
 
-  .logo-text {
-    font-size: 2.5rem;
+  .logo-image {
+    height: 70px;
+    max-width: 200px;
   }
 
   .splash-subtext {
